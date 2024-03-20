@@ -18,6 +18,8 @@ public class PlayerControls : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+            if (input.x != 0) input.y = 0;
+
             //vérifie si une touche est pressée avec un statut nul
             if (input != Vector2.zero)
             {
