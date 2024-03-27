@@ -4,46 +4,32 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    public float moveSpeed;
+    public float speed = 5f; // Vitesse de déplacement du personnage
+    public Sprite[] sprites; // Tableau de sprites pour chaque direction (gauche, droite, avant, arrière)
+    private Rigidbody2D rb; // Référence au Rigidbody2D
+    private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer
 
-    private bool isMoving;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>(); // Obtient le Rigidbody2D attaché au personnage
+        rb.gravityScale = 0f; // Désactive la gravité pour éviter le glissement
 
-    private Vector2 input;
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Obtient le SpriteRenderer attaché au personnage
+    }
 
     private void Update()
     {
-        //attribue les stockages de droite/gauche et haut/bas à la variable input
-        if (!isMoving)
+        float horizontalInput = Input.GetAxis("Horizontal"); // Récupère l'entrée horizontale (gauche/droite) du joueur
+        float verticalInput = Input.GetAxis("Vertical"); // Récupère l'entrée verticale (haut/bas) du joueur
+        Vector2 movement = new Vector2(horizontalInput, verticalInput); // Crée un vecteur de mouvement avec les entrées du joueur
+        if (movement != Vector2.zero) // Vérifie si le joueur se déplace
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-
-            if (input.x != 0) input.y = 0;
-
-            //vérifie si une touche est pressée avec un statut nul
-            if (input != Vector2.zero)
-            {
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-
-                StartCoroutine(Move(targetPos));
-            }
+            Vector2 velocity = movement * speed; // Calcule la vélocité du mouvement
+            rb.velocity = velocity; // Applique la vélocité pour déplacer le personnage
         }
-    }
-
-    IEnumerator Move(Vector3 targetPos)
-    {
-        isMoving = true;
-        // tant que le perso bouge
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
+        else
         {
-            // prend la position de départ et la modifie
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-            yield return null;
+            rb.velocity = Vector2.zero; // Arrête le mouvement si aucune touche n'est pressée
         }
-        transform.position = targetPos;
-
-        isMoving = false;
     }
 }
