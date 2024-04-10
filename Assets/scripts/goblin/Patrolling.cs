@@ -14,6 +14,9 @@ public class Patrolling : MonoBehaviour
     private Vector3 initScale;
     private bool movingLeft;
 
+    [Header("Enemy Animator")]
+    private Animator anim;
+
     private void Awake()
     {
         initScale = enemy.localScale;
@@ -43,6 +46,8 @@ public class Patrolling : MonoBehaviour
     }
     private void MoveInDirection(int _direction)
     {
+        //anim.SetBool("nom de l'animation de marche", true);
+
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, 
             initScale.y, initScale.z);
 
