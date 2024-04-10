@@ -19,6 +19,7 @@ public class MobBehavior : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         //anim.SetTrigger("nom de l'animation d'attaque");
+        //selectionner la bonne frame dans l'anim et lui attribuer le programme
     }
 
     private void Update()
