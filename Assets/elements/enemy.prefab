@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
+  range: 0
   damage: 1
   boxCollider: {fileID: 7512537412206298832}
   playerLayer:
