@@ -15,7 +15,7 @@ public class Patrolling : MonoBehaviour
     private bool movingLeft;
 
     [Header("Enemy Animator")]
-    private Animator anim;
+    [SerializeField]private Animator anim;
 
     private void Awake()
     {
@@ -42,6 +42,7 @@ public class Patrolling : MonoBehaviour
 
     private void DirectionChange()
     {
+        anim.SetBool("Walkgob", false);
         movingLeft = !movingLeft;
     }
     private void MoveInDirection(int _direction)

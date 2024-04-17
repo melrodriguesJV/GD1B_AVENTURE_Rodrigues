@@ -634,6 +634,7 @@ MonoBehaviour:
   rightEdge: {fileID: 1934651056}
   enemy: {fileID: 1167707149}
   speed: 2
+  anim: {fileID: 1664697767}
 --- !u!4 &1377131183
 Transform:
   m_ObjectHideFlags: 0
@@ -876,27 +877,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1664697762 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5998986206997691206, guid: 026a582e8b54d7045a3136966a793588, type: 3}
+--- !u!95 &1664697767 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -1299250783258860291, guid: 026a582e8b54d7045a3136966a793588, type: 3}
   m_PrefabInstance: {fileID: 4407558988916034594}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1664697768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664697762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fecf8dc86d48a74c85123fa5cfaae39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftEdge: {fileID: 460237745}
-  rightEdge: {fileID: 1934651056}
-  enemy: {fileID: 1167707149}
-  speed: 1
 --- !u!1 &1700357342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,10 +1285,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5998986206997691206, guid: 026a582e8b54d7045a3136966a793588, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1664697768}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 026a582e8b54d7045a3136966a793588, type: 3}
 --- !u!1001 &7366513287205198264
 PrefabInstance:
