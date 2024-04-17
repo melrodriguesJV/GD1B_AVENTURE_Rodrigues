@@ -21,15 +21,39 @@ public class PlayerControls : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal"); // Récupère l'entrée horizontale (gauche/droite) du joueur
         float verticalInput = Input.GetAxis("Vertical"); // Récupère l'entrée verticale (haut/bas) du joueur
+        
         Vector2 movement = new Vector2(horizontalInput, verticalInput); // Crée un vecteur de mouvement avec les entrées du joueur
         if (movement != Vector2.zero) // Vérifie si le joueur se déplace
         {
             Vector2 velocity = movement * speed; // Calcule la vélocité du mouvement
             rb.velocity = velocity; // Applique la vélocité pour déplacer le personnage
+
+            //ChangeSpriteDirection(horizontalInput, verticalInput);  // Change le sprite en fonction de la direction du mouvement
         }
         else
         {
             rb.velocity = Vector2.zero; // Arrête le mouvement si aucune touche n'est pressée
         }
     }
+
+    // void ChangeSpriteDirection(float horizontalInput, float verticalInput)
+    //{
+       // Change le sprite en fonction de la direction du mouvement
+       // if (horizontalInput< 0) // Si le joueur va à gauche
+       // {
+            //spriteRenderer.sprite = sprites[0]; // Affiche le sprite de profil gauche
+       // }
+       // else if (horizontalInput > 0) // Si le joueur va à droite
+       // {
+            //spriteRenderer.sprite = sprites[1]; // Affiche le sprite de profil droit
+       // }
+       // else if (verticalInput > 0) // Si le joueur va vers le haut
+       // {
+            // spriteRenderer.sprite = sprites[2]; // Affiche le sprite de face
+       // }
+       // else if (verticalInput < 0) // Si le joueur va vers le bas
+       // {
+            // spriteRenderer.sprite = sprites[3]; // Affiche le sprite de dos
+       // }
+    // }
 }

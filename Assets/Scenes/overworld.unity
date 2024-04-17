@@ -1202,6 +1202,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PNJ
       objectReference: {fileID: 0}
+    - target: {fileID: 5039848349666407275, guid: 98c2d4db857b4ff49a8eb7aed14019f5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039848349666407275, guid: 98c2d4db857b4ff49a8eb7aed14019f5, type: 3}
+      propertyPath: m_TagString
+      value: PNJ
+      objectReference: {fileID: 0}
     - target: {fileID: 6448614790378621843, guid: 98c2d4db857b4ff49a8eb7aed14019f5, type: 3}
       propertyPath: m_Sprite
       value: 
