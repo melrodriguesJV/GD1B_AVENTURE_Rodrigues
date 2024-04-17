@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class MobBehavior : MonoBehaviour
 {
+    [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
+
+    [Header ("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
+    
+    [Header ("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
     //references
     private Animator anim;
     private Health playerHealth;
 
+    private Patrolling enemyPatrol;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
         anim.SetTrigger("Attackgob");
         //selectionner la bonne frame dans l'anim et lui attribuer le programme
+        enemyPatrol = GetComponentInParent<Patrolling>();
     }
 
     private void Update()
@@ -34,7 +42,10 @@ public class MobBehavior : MonoBehaviour
                 cooldownTimer = 0;
                 anim.SetTrigger("Attackgob");
             }
-        }     
+        }
+
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()

@@ -26,6 +26,11 @@ public class Patrolling : MonoBehaviour
         initScale = enemy.localScale;
     }
 
+    private void OnDisable()
+    {
+        anim.SetBool("Walkgob", false);
+    }
+
     private void Update()
     {
         if (movingLeft)
