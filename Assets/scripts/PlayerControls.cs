@@ -9,8 +9,6 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody2D rb; // Référence au Rigidbody2D
     private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer
     [SerializeField] private Animator anim;
-    public LayerMask solidObjectsLayer;
-    public LayerMask interactiblesLayer;
 
     private void Awake()
     {
@@ -41,14 +39,6 @@ public class PlayerControls : MonoBehaviour
         {
             rb.velocity = Vector2.zero; // Arrête le mouvement si aucune touche n'est pressée
         }
-
-        if (Input.GetKeyDown(KeyCode.C))
-            Interact();
-    }
-
-    void Interact()
-    {
-
     }
 
     // void ChangeSpriteDirection(float horizontalInput, float verticalInput)
