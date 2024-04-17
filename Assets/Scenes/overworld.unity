@@ -634,6 +634,7 @@ MonoBehaviour:
   rightEdge: {fileID: 1934651056}
   enemy: {fileID: 1167707149}
   speed: 2
+  idleDuration: 1
   anim: {fileID: 1664697767}
 --- !u!4 &1377131183
 Transform:

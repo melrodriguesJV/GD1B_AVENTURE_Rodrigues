@@ -14,6 +14,10 @@ public class Patrolling : MonoBehaviour
     private Vector3 initScale;
     private bool movingLeft;
 
+    [Header("Idle Behavior")]
+    [SerializeField] private float idleDuration;
+    private float idleTimer;
+
     [Header("Enemy Animator")]
     [SerializeField]private Animator anim;
 
@@ -43,10 +47,14 @@ public class Patrolling : MonoBehaviour
     private void DirectionChange()
     {
         anim.SetBool("Walkgob", false);
-        movingLeft = !movingLeft;
+        idleTimer += Time.deltaTime;
+
+        if(idleTimer > idleDuration)
+            movingLeft = !movingLeft;
     }
     private void MoveInDirection(int _direction)
     {
+        idleTimer = 0;
         anim.SetBool("Walkgob", true);
 
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, 
