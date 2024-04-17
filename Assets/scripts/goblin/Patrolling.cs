@@ -46,7 +46,7 @@ public class Patrolling : MonoBehaviour
     }
     private void MoveInDirection(int _direction)
     {
-        //anim.SetBool("nom de l'animation de marche", true);
+        anim.SetBool("Walkgob", true);
 
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, 
             initScale.y, initScale.z);

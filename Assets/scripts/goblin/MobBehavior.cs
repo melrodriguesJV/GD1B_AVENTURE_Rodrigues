@@ -18,7 +18,7 @@ public class MobBehavior : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //anim.SetTrigger("nom de l'animation d'attaque");
+        anim.SetTrigger("Attackgob");
         //selectionner la bonne frame dans l'anim et lui attribuer le programme
     }
 
@@ -32,6 +32,7 @@ public class MobBehavior : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
+                anim.SetTrigger("Attackgob");
             }
         }     
     }
