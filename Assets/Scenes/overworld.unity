@@ -2109,6 +2109,10 @@ PrefabInstance:
     - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
       objectReference: {fileID: 951931099, guid: 5cd03862ed142dd448327ba4a9e07e07, type: 3}
     - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
       propertyPath: sprites.Array.data[3]

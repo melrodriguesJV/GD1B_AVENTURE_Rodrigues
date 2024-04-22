@@ -52,13 +52,17 @@ public class PlayerControls : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[1]; // Affiche le sprite de profil droit
         }
-        else if (verticalInput > 0) // Si le joueur va vers le haut
+        else if (verticalInput < 0) // Si le joueur va vers le haut
         {
             spriteRenderer.sprite = sprites[2]; // Affiche le sprite de face
+            anim.SetBool("IdleKnight", true);
+            anim.SetBool("idleKnightressBack", false);
         }
-        else if (verticalInput < 0) // Si le joueur va vers le bas
+        else if (verticalInput > 0) // Si le joueur va vers le bas
         {
             spriteRenderer.sprite = sprites[3]; // Affiche le sprite de dos
+            anim.SetBool("IdleKnight", false);
+            anim.SetBool("idleKnightressBack", true);
         }
     }
 }
