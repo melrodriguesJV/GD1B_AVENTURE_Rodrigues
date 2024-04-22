@@ -33,7 +33,7 @@ public class PlayerControls : MonoBehaviour
             Vector2 velocity = movement * speed; // Calcule la vélocité du mouvement
             rb.velocity = velocity; // Applique la vélocité pour déplacer le personnage
 
-            //ChangeSpriteDirection(horizontalInput, verticalInput);  // Change le sprite en fonction de la direction du mouvement
+            ChangeSpriteDirection(horizontalInput, verticalInput);  // Change le sprite en fonction de la direction du mouvement
         }
         else
         {
@@ -41,24 +41,24 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    // void ChangeSpriteDirection(float horizontalInput, float verticalInput)
-    //{
+    void ChangeSpriteDirection(float horizontalInput, float verticalInput)
+    {
        // Change le sprite en fonction de la direction du mouvement
-       // if (horizontalInput< 0) // Si le joueur va à gauche
-       // {
-            //spriteRenderer.sprite = sprites[0]; // Affiche le sprite de profil gauche
-       // }
-       // else if (horizontalInput > 0) // Si le joueur va à droite
-       // {
-            //spriteRenderer.sprite = sprites[1]; // Affiche le sprite de profil droit
-       // }
-       // else if (verticalInput > 0) // Si le joueur va vers le haut
-       // {
-            // spriteRenderer.sprite = sprites[2]; // Affiche le sprite de face
-       // }
-       // else if (verticalInput < 0) // Si le joueur va vers le bas
-       // {
-            // spriteRenderer.sprite = sprites[3]; // Affiche le sprite de dos
-       // }
-    // }
+        if (horizontalInput< 0) // Si le joueur va à gauche
+        {
+            spriteRenderer.sprite = sprites[0]; // Affiche le sprite de profil gauche
+        }
+        else if (horizontalInput > 0) // Si le joueur va à droite
+        {
+            spriteRenderer.sprite = sprites[1]; // Affiche le sprite de profil droit
+        }
+        else if (verticalInput > 0) // Si le joueur va vers le haut
+        {
+            spriteRenderer.sprite = sprites[2]; // Affiche le sprite de face
+        }
+        else if (verticalInput < 0) // Si le joueur va vers le bas
+        {
+            spriteRenderer.sprite = sprites[3]; // Affiche le sprite de dos
+        }
+    }
 }

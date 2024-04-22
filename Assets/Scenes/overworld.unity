@@ -979,6 +979,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df75897a051db8843bb01df29c0e05c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1282239058 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3456355288843018795, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+  m_PrefabInstance: {fileID: 7366513287205198264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1346767855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2098,22 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.492635
       objectReference: {fileID: 0}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1282239058}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: sprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 951931099, guid: 5cd03862ed142dd448327ba4a9e07e07, type: 3}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 367155359, guid: 1a74a7a01d6a3644b93fe47883f741f8, type: 3}
     - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
       propertyPath: interactiblesLayer.m_Bits
       value: 256
