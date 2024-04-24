@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class priority : MonoBehaviour
 {
-    void Start()
+    public int scene;
+    private void Awake()
     {
-        Scene scene = SceneManager.GetActiveScene();
-       
-          
+        
     }
 }
