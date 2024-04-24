@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
     public float speed = 5f; // Vitesse de déplacement du personnage
     private Rigidbody2D rb; // Référence au Rigidbody2D
     private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer
+    private Vector3 initScale;
     
     [Header("Player Animator")]
     [SerializeField] private Animator anim;
@@ -19,6 +20,7 @@ public class PlayerControls : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        initScale = player.localScale;
     }
     private void Start()
     {
@@ -56,12 +58,14 @@ public class PlayerControls : MonoBehaviour
             anim.SetBool("idleKnightressSide", true);
             anim.SetBool("IdleKnight", false);
             anim.SetBool("idleKnightressBack", false);
+            MoveInDirection(-1);
         }
         else if (horizontalInput > 0) // Si le joueur va à droite
         {
             anim.SetBool("idleKnightressSide", true);
             anim.SetBool("IdleKnight", false);
             anim.SetBool("idleKnightressBack", false);
+            MoveInDirection(1);
         }
         else if (verticalInput < 0) // Si le joueur va vers le haut
         {
@@ -75,5 +79,14 @@ public class PlayerControls : MonoBehaviour
             anim.SetBool("idleKnightressBack", true);
             anim.SetBool("idleKnightressSide", false);
         }
+    }
+
+    private void MoveInDirection(int _direction)
+    {
+        player.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
+            initScale.y, initScale.z);
+
+        player.position = new Vector3(player.position.x + Time.deltaTime * _direction,
+            player.position.y, player.position.z);
     }
 }
