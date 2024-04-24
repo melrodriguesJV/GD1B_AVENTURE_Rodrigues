@@ -47,6 +47,8 @@ public class PlayerControls : MonoBehaviour
         {
             rb.velocity = Vector2.zero; // Arrête le mouvement si aucune touche n'est pressée
         }
+
+        anim.SetBool("isMoving", horizontalInput != 0);
     }
 
     void ChangeSpriteDirection(float horizontalInput, float verticalInput)
@@ -59,6 +61,7 @@ public class PlayerControls : MonoBehaviour
             anim.SetBool("IdleKnight", false);
             anim.SetBool("idleKnightressBack", false);
             MoveInDirection(-1);
+
         }
         else if (horizontalInput > 0) // Si le joueur va à droite
         {
