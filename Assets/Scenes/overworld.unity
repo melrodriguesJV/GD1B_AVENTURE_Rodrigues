@@ -2116,6 +2116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1282239058}
     - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 616578397}
+    - target: {fileID: 8076643086562785115, guid: c7c7e3d1d2434ef4184b7f4229cf1b91, type: 3}
       propertyPath: sprites.Array.size
       value: 4
       objectReference: {fileID: 0}

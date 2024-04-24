@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("Player")]
+    [SerializeField] private Transform player;
+
+    [Header("Movement parameters")]
     public float speed = 5f; // Vitesse de déplacement du personnage
-    public Sprite[] sprites; // Tableau de sprites pour chaque direction (gauche, droite, avant, arrière)
     private Rigidbody2D rb; // Référence au Rigidbody2D
     private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer
+    
+    [Header("Player Animator")]
     [SerializeField] private Animator anim;
+    
 
     private void Awake()
     {
@@ -43,26 +49,31 @@ public class PlayerControls : MonoBehaviour
 
     void ChangeSpriteDirection(float horizontalInput, float verticalInput)
     {
-       // Change le sprite en fonction de la direction du mouvement
-        if (horizontalInput< 0) // Si le joueur va à gauche
+        // Change le sprite en fonction de la direction du mouvement
+
+        if (horizontalInput < 0) // Si le joueur va à gauche
         {
-            spriteRenderer.sprite = sprites[0]; // Affiche le sprite de profil gauche
+            anim.SetBool("idleKnightressSide", true);
+            anim.SetBool("IdleKnight", false);
+            anim.SetBool("idleKnightressBack", false);
         }
         else if (horizontalInput > 0) // Si le joueur va à droite
         {
-            spriteRenderer.sprite = sprites[1]; // Affiche le sprite de profil droit
+            anim.SetBool("idleKnightressSide", true);
+            anim.SetBool("IdleKnight", false);
+            anim.SetBool("idleKnightressBack", false);
         }
         else if (verticalInput < 0) // Si le joueur va vers le haut
         {
-            spriteRenderer.sprite = sprites[2]; // Affiche le sprite de face
             anim.SetBool("IdleKnight", true);
             anim.SetBool("idleKnightressBack", false);
+            anim.SetBool("idleKnightressSide", false);
         }
         else if (verticalInput > 0) // Si le joueur va vers le bas
         {
-            spriteRenderer.sprite = sprites[3]; // Affiche le sprite de dos
             anim.SetBool("IdleKnight", false);
             anim.SetBool("idleKnightressBack", true);
+            anim.SetBool("idleKnightressSide", false);
         }
     }
 }
