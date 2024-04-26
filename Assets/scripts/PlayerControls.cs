@@ -56,6 +56,11 @@ public class PlayerControls : MonoBehaviour
         {
             anim.SetBool("isMoving", false);
         }
+
+        if (horizontalInput != 0 && verticalInput != 0)
+        {
+            anim.SetBool("isMoving", false);
+        }
     }
 
     void ChangeSpriteDirection(float horizontalInput, float verticalInput)
