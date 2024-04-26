@@ -48,7 +48,14 @@ public class PlayerControls : MonoBehaviour
             rb.velocity = Vector2.zero; // Arrête le mouvement si aucune touche n'est pressée
         }
 
-        anim.SetBool("isMoving", horizontalInput != 0);
+        if (horizontalInput != 0)
+        {
+            anim.SetBool("isMoving", true);
+        }       
+        else if (horizontalInput == 0)
+        {
+            anim.SetBool("isMoving", false);
+        }
     }
 
     void ChangeSpriteDirection(float horizontalInput, float verticalInput)
@@ -75,12 +82,14 @@ public class PlayerControls : MonoBehaviour
             anim.SetBool("IdleKnight", true);
             anim.SetBool("idleKnightressBack", false);
             anim.SetBool("idleKnightressSide", false);
+            anim.SetBool("isMoving", false);
         }
         else if (verticalInput > 0) // Si le joueur va vers le bas
         {
             anim.SetBool("IdleKnight", false);
             anim.SetBool("idleKnightressBack", true);
             anim.SetBool("idleKnightressSide", false);
+            anim.SetBool("isMoving", false);
         }
     }
 
@@ -91,7 +100,5 @@ public class PlayerControls : MonoBehaviour
 
         player.position = new Vector3(player.position.x + Time.deltaTime * _direction,
             player.position.y, player.position.z);
-    }
-
-    
+    }   
 }
