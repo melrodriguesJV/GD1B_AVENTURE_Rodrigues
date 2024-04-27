@@ -9,4 +9,9 @@ public class TitleToControls : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(3);
     }
+
+    public void Title()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }
