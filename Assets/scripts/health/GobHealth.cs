@@ -5,18 +5,16 @@ using UnityEngine;
 public class GobHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private float startingGobHealth;
-    [SerializeField] private float currentGobHealth;
-    private SpriteRenderer spriteRend;
-
-    private void Awake()
-    {
-        currentGobHealth = startingGobHealth;
-        spriteRend = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] private float gobHealth;
+    [SerializeField] private new GameObject gameObject;
 
     public void GobTakeDamage(float _damage)
     {
+        gobHealth -= _damage;
 
+        if (gobHealth <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

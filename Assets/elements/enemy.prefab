@@ -186,3 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ea8042dcf837441827e3fbdca4428f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingGobHealth: 2
+  currentGobHealth: 0
+  Goblin: {fileID: 0}

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -1899921606323392393}
   - component: {fileID: 3456355288843018795}
   - component: {fileID: 2322637268837820482}
+  - component: {fileID: 7526759829341243185}
+  - component: {fileID: 2226289487753061359}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -146,8 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a742733f5a4d4448e4a5aca2b01d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5113602391155718519}
   speed: 3
-  sprites: []
+  anim: {fileID: 3456355288843018795}
 --- !u!50 &-1899921606323392393
 Rigidbody2D:
   serializedVersion: 4
@@ -211,3 +214,35 @@ MonoBehaviour:
   startingHealth: 3
   iFramesDuration: 2
   numberOfFlashes: 3
+--- !u!114 &7526759829341243185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142691155028776168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df75897a051db8843bb01df29c0e05c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2226289487753061359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142691155028776168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6903de606f3ffb540b3b312c4c3ba29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0
+  range: 2.7
+  damage: 2
+  colliderDistance: 0
+  boxCollider: {fileID: 5473151426890101636}
+  gobLayer:
+    serializedVersion: 2
+    m_Bits: 128

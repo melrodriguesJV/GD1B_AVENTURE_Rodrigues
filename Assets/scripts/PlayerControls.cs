@@ -105,5 +105,5 @@ public class PlayerControls : MonoBehaviour
 
         player.position = new Vector3(player.position.x + Time.deltaTime * _direction,
             player.position.y, player.position.z);
-    }   
+    }
 }
