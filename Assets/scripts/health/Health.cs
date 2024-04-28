@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
         else
         {
             //player dead
+            SceneManager.LoadSceneAsync(4);
         }
     }
 
